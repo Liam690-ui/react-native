@@ -1,0 +1,50 @@
+[
+  {
+    "id": "1",
+    "image": "https://images.unsplash.com/photo-1611162616305-c69b3fa7fbe0",
+    "image_url": "https://images.unsplash.com/photo-1611162616305-c69b3fa7fbe0",
+    "caption": "Beautiful sunset at the beach! 🌅 #sunset #beach #vibes",
+    "user": {
+      "id": "1",
+      "username": "john_doe",
+      "avatar_url": "https://randomuser.me/api/portraits/men/1.jpg",
+      "image_url": "https://randomuser.me/api/portraits/men/1.jpg"
+    }
+  },
+  {
+    "id": "2",
+    "image": "https://images.unsplash.com/photo-1482049016688-2d3e1b311543",
+    "image_url": "https://images.unsplash.com/photo-1482049016688-2d3e1b311543",
+    "caption": "Coffee time ☕️ Perfect start to the day! #coffee #morning",
+    "user": {
+      "id": "2",
+      "username": "sarah_smith",
+      "avatar_url": "https://randomuser.me/api/portraits/women/2.jpg",
+      "image_url": "https://randomuser.me/api/portraits/women/2.jpg"
+    }
+  },
+  {
+    "id": "3",
+    "image": "https://images.unsplash.com/photo-1504674900247-0877df9cc836",
+    "image_url": "https://images.unsplash.com/photo-1504674900247-0877df9cc836",
+    "caption": "Lunch with friends 🍽️ #foodie #friends #weekend",
+    "user": {
+      "id": "3",
+      "username": "mike_wilson",
+      "avatar_url": "https://randomuser.me/api/portraits/men/3.jpg",
+      "image_url": "https://randomuser.me/api/portraits/men/3.jpg"
+    }
+  },
+  {
+    "id": "4",
+    "image": "https://images.unsplash.com/photo-1533923156502-be31530547c4",
+    "image_url": "https://images.unsplash.com/photo-1533923156502-be31530547c4",
+    "caption": "Adventure time! 🏔️ #hiking #nature #explore",
+    "user": {
+      "id": "4",
+      "username": "emma_davis",
+      "avatar_url": "https://randomuser.me/api/portraits/women/4.jpg",
+      "image_url": "https://randomuser.me/api/portraits/women/4.jpg"
+    }
+  }
+]
