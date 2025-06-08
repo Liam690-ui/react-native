@@ -1,22 +1,15 @@
-import feedPosts from "@/app/utils/data/data.json";
-import React from "react";
-import { StyleSheet, Text, View } from "react-native";
+import { FlatList } from "react-native";
+import FeedListItem from "../../components/features/FeedListItem";
+import feedPosts from "../../utils/data/data.json";
 
-const post = feedPosts[0];
 export default function FeedScreen() {
-  console.log(post);
   return (
-    <View style={styles.container}>
-      <Text>Feeds</Text>
-    </View>
+    <FlatList
+      data={feedPosts}
+      keyExtractor={(item) => item.id.toString()}
+      renderItem={({ item }) => <FeedListItem post={item} />}
+      contentContainerStyle={{ paddingBottom: 20 }}
+      showsVerticalScrollIndicator={false}
+    />
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: "center",
-    alignItems: "center",
-    backgroundColor: "red",
-  },
-});
