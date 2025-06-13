@@ -1,15 +1,33 @@
 import { AntDesign, Feather, Ionicons } from "@expo/vector-icons";
-import { Image, StyleSheet, Text, View } from "react-native";
+import { AdvancedImage } from "cloudinary-react-native";
+import {
+  Image,
+  StyleSheet,
+  Text,
+  useWindowDimensions,
+  View,
+} from "react-native";
+
+// Import required actions and qualifiers.
+import { thumbnail } from "@cloudinary/url-gen/actions/resize";
+import { cld } from "../../lib/cloudinary";
 
 export default function FeedListItem({ post }: { post: any }) {
+  const image = cld.image(post.image);
+  const { width } = useWindowDimensions();
+  // Apply the transformation.
+  image.resize(thumbnail().width(width).height(width));
+
+  const avatar = cld.image(post.user.image_url);
+  avatar.resize(thumbnail().width(48).height(48));
+
   return (
     <View style={styles.container}>
       <View style={styles.header}>
         <Image source={{ uri: post.user.image_url }} style={styles.avatar} />
         <Text style={styles.username}>{post.user.username}</Text>
       </View>
-
-      <Image source={{ uri: post.image }} style={styles.image} />
+      <AdvancedImage cldImg={image} style={styles.image} />
 
       <View style={styles.footer}>
         <AntDesign name="hearto" size={20} color="black" style={styles.icon} />

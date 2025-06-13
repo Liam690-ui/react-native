@@ -1,7 +1,7 @@
 [
   {
     "id": "1",
-    "image": "https://images.unsplash.com/photo-1611162616305-c69b3fa7fbe0",
+    "image": "cld-sample-2",
     "image_url": "https://images.unsplash.com/photo-1611162616305-c69b3fa7fbe0",
     "caption": "Beautiful sunset at the beach! 🌅 #sunset #beach #vibes",
     "user": {
@@ -13,7 +13,7 @@
   },
   {
     "id": "2",
-    "image": "https://images.unsplash.com/photo-1482049016688-2d3e1b311543",
+    "image": "cld-sample-2",
     "image_url": "https://images.unsplash.com/photo-1482049016688-2d3e1b311543",
     "caption": "Coffee time ☕️ Perfect start to the day! #coffee #morning",
     "user": {
@@ -25,7 +25,7 @@
   },
   {
     "id": "3",
-    "image": "https://images.unsplash.com/photo-1504674900247-0877df9cc836",
+    "image": "cld-sample-2",
     "image_url": "https://images.unsplash.com/photo-1504674900247-0877df9cc836",
     "caption": "Lunch with friends 🍽️ #foodie #friends #weekend",
     "user": {
@@ -37,7 +37,7 @@
   },
   {
     "id": "4",
-    "image": "https://images.unsplash.com/photo-1533923156502-be31530547c4",
+    "image": "cld-sample-2",
     "image_url": "https://images.unsplash.com/photo-1533923156502-be31530547c4",
     "caption": "Adventure time! 🏔️ #hiking #nature #explore",
     "user": {

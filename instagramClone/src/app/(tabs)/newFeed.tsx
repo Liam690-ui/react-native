@@ -1,29 +1,50 @@
-import React, { useState } from "react";
-import {
-  Image,
-  Pressable,
-  StyleSheet,
-  Text,
-  TextInput,
-  View,
-} from "react-native";
+import Button from "@/components/ui/Button";
+import * as ImagePicker from "expo-image-picker";
+import { useEffect, useState } from "react";
+
+import { Image, StyleSheet, Text, TextInput, View } from "react-native";
 
 export default function NewFeedScreen() {
-  const [caption, setCaption] = useState("shanaya shalom");
+  const [caption, setCaption] = useState("");
+  const [image, setImage] = useState<string | null>(null);
+
+  useEffect(() => {
+    if (!image) {
+      pickImage();
+    }
+  }, [image]);
+
+  const pickImage = async () => {
+    // No permissions request is necessary for launching the image library
+    let result = await ImagePicker.launchImageLibraryAsync({
+      mediaTypes: ["images", "videos"],
+      allowsEditing: true,
+      aspect: [4, 3],
+      quality: 1,
+    });
+
+    if (!result.canceled) {
+      setImage(result.assets[0].uri);
+    }
+  };
   const handleCaptionChange = (newCaption: string) => {
     setCaption(newCaption);
   };
   return (
     <View style={styles.container}>
       {/* image picker */}
-      <Image
-        source={{
-          uri: "https://images.unsplash.com/photo-1482049016688-2d3e1b311543",
-        }}
-        style={{ width: 208, aspectRatio: 3 / 4, borderRadius: 12 }}
-      />
+      {image ? (
+        <Image
+          source={{
+            uri: image,
+          }}
+          style={{ width: 208, aspectRatio: 3 / 4, borderRadius: 12 }}
+        />
+      ) : (
+        <View style={styles.imagePlaceholder} />
+      )}
       {/* text input */}
-      <Text style={styles.description} onPress={() => {}}>
+      <Text style={styles.description} onPress={pickImage}>
         change
       </Text>
       <TextInput
@@ -33,11 +54,12 @@ export default function NewFeedScreen() {
         onChangeText={handleCaptionChange}
       />
       {/* button */}
-      <View style={styles.buttonContainer}>
-        <Pressable style={styles.button}>
-          <Text style={styles.buttonText}>Share</Text>
-        </Pressable>
-      </View>
+      <Button
+        title="Share"
+        onPress={() => {}}
+        style={styles.button}
+        textStyle={styles.buttonText}
+      />
     </View>
   );
 }
@@ -47,6 +69,12 @@ const styles = StyleSheet.create({
     flex: 1,
     padding: 12,
     alignItems: "center",
+  },
+  imagePlaceholder: {
+    width: 208,
+    aspectRatio: 3 / 4,
+    borderRadius: 12,
+    backgroundColor: "lightgray",
   },
   description: {
     fontSize: 16,
