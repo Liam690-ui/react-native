@@ -1,4 +1,5 @@
 import Button from "@/components/ui/Button";
+import { uploadImage } from "@/utils/helpers/uploadImage";
 import * as ImagePicker from "expo-image-picker";
 import { useEffect, useState } from "react";
 
@@ -20,7 +21,7 @@ export default function NewFeedScreen() {
       mediaTypes: ["images", "videos"],
       allowsEditing: true,
       aspect: [4, 3],
-      quality: 1,
+      quality: 0.5,
     });
 
     if (!result.canceled) {
@@ -29,6 +30,12 @@ export default function NewFeedScreen() {
   };
   const handleCaptionChange = (newCaption: string) => {
     setCaption(newCaption);
+  };
+
+  const handleShare = async () => {
+    if (!image) return;
+    const response = await uploadImage(image);
+    console.log(response?.public_id);
   };
   return (
     <View style={styles.container}>
@@ -56,7 +63,7 @@ export default function NewFeedScreen() {
       {/* button */}
       <Button
         title="Share"
-        onPress={() => {}}
+        onPress={handleShare}
         style={styles.button}
         textStyle={styles.buttonText}
       />
